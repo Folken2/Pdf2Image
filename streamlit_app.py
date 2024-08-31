@@ -42,7 +42,7 @@ def main():
                         with open(pdf_path, "wb") as f:
                             f.write(uploaded_file.getbuffer())
                         
-                        st.write(f"Converting {uploaded_file.name} to {image_format}...")
+                        #st.write(f"Converting {uploaded_file.name} to {image_format}...")
                         image_paths = pdf_to_images(pdf_path, temp_dir, image_format)
                         all_image_paths.extend(image_paths)
                         
