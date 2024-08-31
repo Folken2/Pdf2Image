@@ -14,7 +14,7 @@ def pdf_to_images(pdf_path, output_folder, image_format='PNG'):
     image_paths = []
     for i, image in enumerate(images):
         # Set the image filename, keeping the PDF name and choosing the correct format
-        image_path = os.path.join(output_folder, f"{pdf_name}_page_{i + 1}.{image_format.lower()}")
+        image_path = os.path.join(output_folder, f"{pdf_name}_{i + 1}.{image_format.lower()}")
         image.save(image_path, image_format)
         image_paths.append(image_path)
     
@@ -22,7 +22,7 @@ def pdf_to_images(pdf_path, output_folder, image_format='PNG'):
 
 def main():
     st.title("PDF to Image Converter")
-
+    st.markdown("This app only supports single-page PDF files. Have fun! 😎")
     # File uploader for multiple PDF files
     uploaded_files = st.file_uploader("Choose PDF files", type="pdf", accept_multiple_files=True)
     
